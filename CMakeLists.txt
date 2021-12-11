@@ -23,7 +23,11 @@ file(GLOB tri_files "Triangles/lib/*.c")
 add_library(tri ${tri_files})
 
 
-add_executable(TRIRAY triray.c)
-target_link_libraries(TRIRAY cwp)
-target_link_libraries(TRIRAY par)
-target_link_libraries(TRIRAY tri)
+add_executable(triray triray.c)
+target_link_libraries(triray cwp par tri)
+
+add_executable(trimodel trimodel.c)
+target_link_libraries(trimodel cwp par tri)
+
+add_executable(gbbeam gbbeam.c)
+target_link_libraries(gbbeam cwp par tri)
